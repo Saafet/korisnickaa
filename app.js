@@ -31,10 +31,4 @@ app.all('*', (req, res, next) => {
 // Error handler
 app.use(errorController);
 
-// Pokretanje servera na portu koji je definiran u .env datoteci ili 3000 ako nije definirano
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
 module.exports = app;
