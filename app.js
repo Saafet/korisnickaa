@@ -27,8 +27,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(docsConfig));
 app.all('*', (req, res, next) => {
   next(new Error(`Can't find ${req.originalUrl} on this server!`, 404));
 });
-
-// Error handler
 app.use(errorController);
 
 module.exports = app;
