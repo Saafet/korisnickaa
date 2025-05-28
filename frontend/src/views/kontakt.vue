@@ -6,19 +6,33 @@
       <div class="info-box">
         <i class="fas fa-map-marker-alt"></i>
         <p>
-          <img src="@/assets/icons/marker.png" alt="Adresa" class="icon-small" />
-          Adresa: Zelena ulica 123, Zivotinje</p>
+          <img
+            src="@/assets/icons/marker.png"
+            alt="Adresa"
+            class="icon-small"
+          />
+          Adresa: Zelena ulica 123, Zivotinje
+        </p>
       </div>
       <div class="info-box">
         <i class="fas fa-envelope"></i>
         <p>
-          <img src="@/assets/icons/envelope.png" alt="Email" class="icon-small" />
-          Email: info@zivotinje.com</p>
+          <img
+            src="@/assets/icons/envelope.png"
+            alt="Email"
+            class="icon-small"
+          />
+          Email: info@zivotinje.com
+        </p>
       </div>
       <div class="info-box">
         <i class="fas fa-phone"></i>
         <p>
-          <img src="@/assets/icons/phone-call.png" alt="Telefon" class="icon-small" />
+          <img
+            src="@/assets/icons/phone-call.png"
+            alt="Telefon"
+            class="icon-small"
+          />
           Telefon: +387 61 123 456
         </p>
       </div>
@@ -50,28 +64,28 @@ export default {
       name: '',
       email: '',
       message: '',
-      successMessage: ''
+      successMessage: '',
     };
   },
   methods: {
     sendMessage() {
-      this.successMessage = "Vaša poruka je uspješno poslana!";
+      this.successMessage = 'Vaša poruka je uspješno poslana!';
       this.name = '';
       this.email = '';
       this.message = '';
       setTimeout(() => {
         this.successMessage = '';
       }, 3000);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
 .icon-small {
-  width: 16px; /* prilagodi veličinu */
+  width: 16px;
   height: auto;
-  margin-right: 5px; /* razmak između ikonice i teksta */
+  margin-right: 5px;
 }
 
 .contact-container {
@@ -86,7 +100,7 @@ export default {
 
 h2 {
   font-family: 'Lora', serif;
-  color: #2E7D32;
+  color: #2e7d32;
 }
 
 .contact-info {
@@ -106,10 +120,11 @@ h2 {
 
 .info-box i {
   font-size: 20px;
-  color: #2E7D32;
+  color: #2e7d32;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 10px;
   margin: 5px 0;
@@ -122,7 +137,7 @@ h2 {
 }
 
 .submit-btn {
-  background: #2E7D32;
+  background: #2e7d32;
   color: white;
   padding: 10px;
   border: none;
@@ -131,7 +146,7 @@ h2 {
 }
 
 .submit-btn:hover {
-  background: #1B5E20;
+  background: #1b5e20;
 }
 
 .success-message {
@@ -146,11 +161,11 @@ h2 {
 .social-icons a {
   margin: 0 10px;
   font-size: 20px;
-  color: #2E7D32;
+  color: #2e7d32;
   text-decoration: none;
 }
 
 .social-icons a:hover {
-  color: #1B5E20;
+  color: #1b5e20;
 }
 </style>

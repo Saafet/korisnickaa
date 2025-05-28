@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- Navbar se prikazuje samo ako postoji token -->
     <nav v-if="showNavbar" class="navbar">
       <div class="nav-links">
         <router-link to="/pocetna">Početna</router-link>
@@ -10,8 +9,6 @@
       </div>
       <button @click="logout" class="logout-btn">Odjava</button>
     </nav>
-
-    <!-- Ovdje se prikazuju ostale stranice -->
     <router-view />
   </div>
 </template>
@@ -20,33 +17,31 @@
 export default {
   data() {
     return {
-      showNavbar: false, // Po defaultu navbar je sakriven
+      showNavbar: false,
     };
   },
   created() {
-    this.checkAuth(); // Provjerava login status pri učitavanju
+    this.checkAuth();
   },
   methods: {
     checkAuth() {
-      this.showNavbar = !!localStorage.getItem('token'); // Postavlja navbar ako postoji token
+      this.showNavbar = !!localStorage.getItem('token');
     },
     logout() {
-      localStorage.removeItem('token'); // Briše token
-      this.showNavbar = false; // Sakriva navbar
-      this.$router.push('/login'); // Preusmjerava na login
-    }
+      localStorage.removeItem('token');
+      this.showNavbar = false;
+      this.$router.push('/login');
+    },
   },
   watch: {
-    // Ovaj watcher omogućava da se navbar odmah ažurira
     $route(to) {
       this.checkAuth();
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
-/* Navbar stil */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -73,7 +68,6 @@ export default {
   color: #00c853;
 }
 
-/* Logout dugme */
 .logout-btn {
   background: none;
   border: 2px solid #ff1744;
